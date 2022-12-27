@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".dm1">
+
+    <TextView
+        android:id="@+id/chat1text3"
+        android:layout_width="269dp"
+        android:layout_height="50dp"
+
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="45dp"
+
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="292dp"
+        android:text="name1text"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/user_image1"
+        app:layout_constraintTop_toBottomOf="@+id/chat1text" />
+
+    <TextView
+        android:id="@+id/chat1text"
+        android:layout_width="269dp"
+        android:layout_height="50dp"
+
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="39dp"
+        android:layout_marginEnd="107dp"
+        android:layout_marginBottom="387dp"
+        android:text="name2text"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user_image1"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/user_image4"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+
+        android:layout_marginTop="39dp"
+        android:layout_marginBottom="387dp"
+        android:src="@drawable/ic_launcher_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/chat1text1"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chat1text1"
+        app:shapeAppearanceOverlay="@style/Circular" />
+
+    <TextView
+        android:id="@+id/dmname1"
+        android:layout_width="238dp"
+        android:layout_height="46dp"
+
+        android:layout_marginStart="86dp"
+        android:layout_marginTop="109dp"
+        android:layout_marginEnd="87dp"
+        android:layout_marginBottom="576dp"
+        android:text="name1"
+
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/user_image1"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+
+        android:layout_marginTop="205dp"
+        android:layout_marginBottom="476dp"
+        android:src="@drawable/ic_launcher_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/chat1text1"
+        app:layout_constraintHorizontal_bias="0.104"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:shapeAppearanceOverlay="@style/Circular" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/user_image1"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+
+        android:layout_marginTop="205dp"
+        android:layout_marginBottom="476dp"
+        android:src="@drawable/ic_launcher_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/chat1text1"
+        app:layout_constraintHorizontal_bias="0.104"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:shapeAppearanceOverlay="@style/Circular" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/user_image5"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+
+        android:layout_marginTop="42dp"
+        android:layout_marginBottom="296dp"
+        android:src="@drawable/ic_launcher_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/chat1text1"
+        app:layout_constraintHorizontal_bias="0.107"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chat1text"
+        app:shapeAppearanceOverlay="@style/Circular" />
+
+    <TextView
+        android:id="@+id/chat1text1"
+        android:layout_width="269dp"
+        android:layout_height="50dp"
+
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="25dp"
+
+        android:layout_marginBottom="476dp"
+        android:text="name1text"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/user_image1"
+        app:layout_constraintTop_toBottomOf="@+id/dmname1"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/chat1text2"
+        android:layout_width="269dp"
+        android:layout_height="50dp"
+
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="39dp"
+        android:layout_marginEnd="107dp"
+        android:layout_marginBottom="387dp"
+        android:text="name2text"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user_image1" />
+</androidx.constraintlayout.widget.ConstraintLayout>
