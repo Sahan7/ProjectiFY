@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class UserProjectHolder extends AppCompatActivity {
+public class tasks_view extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user_project_holder);
+        setContentView(R.layout.activity_tasks_view);
     }
 }
