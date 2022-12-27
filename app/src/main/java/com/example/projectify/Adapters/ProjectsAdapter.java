@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckedTextView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -50,7 +51,8 @@ public class ProjectsAdapter extends RecyclerView.Adapter<ProjectsAdapter.Projec
 
     public class ProjectsViewHolder extends RecyclerView.ViewHolder {
 
-        TextView projects,tasks;
+        TextView projects;
+        CheckedTextView tasks;
         LinearLayout linear_expandable,linear_nonexpandable;
 
         public ProjectsViewHolder(@NonNull View itemView) {
@@ -71,6 +73,8 @@ public class ProjectsAdapter extends RecyclerView.Adapter<ProjectsAdapter.Projec
                     notifyItemChanged(getAdapterPosition());
                 }
             });
+
+            //Click on Checkbox
         }
     }
 }
