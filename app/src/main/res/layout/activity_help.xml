@@ -33,7 +33,7 @@
 
     <TextView
         android:layout_width="349dp"
-        android:layout_height="290dp"
+        android:layout_height="291dp"
         android:text="First sign yourself up.\nYou are given features add/remove projects and overlook the progress if you are the admins; or to update your progress if you are a project member.\nDo not hesitate to contact us if required.\n\n\n projectify@gmail.com"
         android:textColor="@color/black"
         android:textSize="22dp"

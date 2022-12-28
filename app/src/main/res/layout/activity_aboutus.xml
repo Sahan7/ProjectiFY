@@ -33,7 +33,7 @@
 
     <TextView
         android:layout_width="349dp"
-        android:layout_height="290dp"
+        android:layout_height="289dp"
         android:text="Hey, We are a group of Electrical and Electronics Engineering Undergraduates from the faculty of Engineering University of Sri Jayewardenepura Sri Lanka.
 \n\n Thanks for using Projectify. Don't forget to your support."
         android:textColor="@color/black"
