@@ -1,12 +1,15 @@
 package com.example.projectify;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.CalendarContract;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,20 +18,29 @@ import android.widget.Toast;
 
 import com.example.projectify.Adapters.ProjectsAdapter;
 import com.example.projectify.Models.Projects;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.navigation.NavigationBarView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity<setOnItemSelectedListener> extends AppCompatActivity {
 
-    EditText title,location,description;
-    Button addEvent;
+    // Recycler
+    RecyclerView recyclerView;
+    List<Projects> eventsList;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_calendar);
+        setContentView(R.layout.activity_user_view_tasks);
+//
+        recyclerView = findViewById(R.id.recycler_homeview);
+
+        initData();
+        setRecyclerView();
 
 
 //       TextView username =(TextView) findViewById(R.id.username);
@@ -48,39 +60,59 @@ public class MainActivity extends AppCompatActivity {
 //           }
 //       });
 
-        title = findViewById(R.id.etTitle);
-        location = findViewById(R.id.etLocation);
-        description = findViewById(R.id.etDescription);
-        addEvent = findViewById(R.id.btnAdd);
+         BottomNavigationView bottomnav = findViewById(R.id.bottom_navigation);
+         bottomnav.setSelectedItemId(R.id.nav_home);
 
-        addEvent.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(!title.getText().toString().isEmpty() && !location.getText().toString().isEmpty() && !description.getText().toString().isEmpty()){
+         bottomnav.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+             @Override
+             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                 switch(item.getItemId()){
+                     case R.id.nav_home:
+//                         startActivity(new Intent(getApplicationContext(),tasks_view.class));
+//                         overridePendingTransition(0,0);
+                         return true;
+                     case R.id.nav_profile:
+                         startActivity(new Intent(getApplicationContext(),user_profile_edit.class));
+                         overridePendingTransition(0,0);
+                         return true;
+                     case R.id.nav_calendar:
+                         startActivity(new Intent(getApplicationContext(),calendar.class));
+                         overridePendingTransition(0,0);
+                         return true;
+                     case R.id.nav_message:
+                         startActivity(new Intent(getApplicationContext(),ChatsList.class));
+                         overridePendingTransition(0,0);
+                         return true;
+                 }
+                 return false;
+             }
+         });
 
-                    Intent intent = new Intent(Intent.ACTION_INSERT);
-                    intent.setData(CalendarContract.Events.CONTENT_URI);
-                    intent.putExtra(CalendarContract.Events.TITLE,title.getText().toString());
-                    intent.putExtra(CalendarContract.Events.DESCRIPTION,description.getText().toString());
-                    intent.putExtra(CalendarContract.Events.EVENT_LOCATION,location.getText().toString());
-                    // This allows to change the time of the event - set to "true"
-                    intent.putExtra(CalendarContract.Events.ALL_DAY,true);
-                    // This allows to add people by email
-                    intent.putExtra(Intent.EXTRA_EMAIL,"test@yahoo.com,test2@yahoo.com");
+    }
 
-                    // Check if the event can be handled by a Calendar event in the packet manager
-                    if(intent.resolveActivity(getPackageManager()) != null){
-                        startActivity(intent);
-                    }else{
-                        Toast.makeText(MainActivity.this,"No Calendar App",Toast.LENGTH_SHORT).show();
-                    }
 
-                }else{
-                    Toast.makeText(MainActivity.this,"Please fill all the fields",Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
 
+
+
+// For Recycler View
+    private void setRecyclerView() {
+        ProjectsAdapter projectsAdapter = new ProjectsAdapter(eventsList);
+        recyclerView.setAdapter(projectsAdapter);
+        recyclerView.setHasFixedSize(true);
+    }
+
+    private void initData() {
+        eventsList  = new ArrayList<>();
+        // Get these from database and remove these
+        eventsList.add(new Projects("Project 01","Task 1"));
+        eventsList.add(new Projects("Project 02","Task 2"));
+        eventsList.add(new Projects("Project 03","Task 3"));
+        eventsList.add(new Projects("Project 04","Task 4"));
+        eventsList.add(new Projects("Project 05","Task 5"));
+        eventsList.add(new Projects("Project 06","Task 6"));
+        eventsList.add(new Projects("Project 07","Task 7"));
+        eventsList.add(new Projects("Project 08","Task 8"));
+        eventsList.add(new Projects("Project 09","Task 9"));
 
     }
 }
