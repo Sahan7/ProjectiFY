@@ -35,9 +35,9 @@ public class MainActivity<setOnItemSelectedListener> extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user_view_tasks);
+        setContentView(R.layout.activity_aboutus);
 //
-        recyclerView = findViewById(R.id.recycler_homeview);
+      //  recyclerView = findViewById(R.id.recycler_homeview);
 
         initData();
         setRecyclerView();
@@ -60,7 +60,7 @@ public class MainActivity<setOnItemSelectedListener> extends AppCompatActivity {
 //           }
 //       });
 
-         BottomNavigationView bottomnav = findViewById(R.id.bottom_navigation);
+         @SuppressLint({"MissingInflatedId", "LocalSuppress"}) BottomNavigationView bottomnav = findViewById(R.id.bottom_navigation);
          bottomnav.setSelectedItemId(R.id.nav_home);
 
          bottomnav.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {

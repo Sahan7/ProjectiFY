@@ -1,37 +1,42 @@
 package com.example.projectify;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class help extends AppCompatActivity {
 
+    ImageView imageView;
+
+    @SuppressLint({"MissingInflatedId", "WrongViewCast"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_aboutus);
 
-        // calling the action bar
-        ActionBar actionBar = getSupportActionBar();
+        // initialize imageView
+        // with method findViewById()
+        imageView = findViewById(R.id.helpbuttonback);
 
-        // Customize the back button
-        actionBar.setHomeAsUpIndicator(R.drawable.ic_arrow_back);
-
-        // showing the back button in action bar
-        actionBar.setDisplayHomeAsUpEnabled(true);
-    }
-
-    // this event will enable the back
-    // function to the button on press
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                this.finish();
-                return true;
-        }
-        return super.onOptionsItemSelected(item);
+        // Apply OnClickListener to imageView to
+        // switch from one activity to another
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Intent class will help to go to next activity using
+                // it's object named intent.
+                // SecondActivty is the name of new created EmptyActivity.
+                Intent intent = new Intent(help.this, user_profile_edit.class);
+                startActivity(intent);
+            }
+        });
     }
 }
+
