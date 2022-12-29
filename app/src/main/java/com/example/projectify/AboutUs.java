@@ -6,12 +6,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class help extends AppCompatActivity {
+public class AboutUs extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_aboutus);
 
         // calling the action bar
         ActionBar actionBar = getSupportActionBar();
@@ -35,3 +35,4 @@ public class help extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 }
+
